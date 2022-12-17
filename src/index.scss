@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    line-height: normal;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+}
+
+$colors: (
+    "0": grey,
+    "1": lightgreen,
+    "2": lightblue,
+    "3": gold,
+    "4": pink,
+    "5": cornflowerblue,
+    "6": coral,
+    "7": chocolate,
+    "8": crimson
+);
+
+@each $color-name,
+$color in $colors {
+    .color-#{$color-name} {
+        color: $color !important;
+    }
+}
+
+.flag {
+    color: red
+}
+
+.mine {
+    color: red;
+}
+
+.tile {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light {
+    background-color: #AAA;
+}
+
+.dark {
+    background-color: #888;
+}
+
+.board {
+    border-radius: 0.5rem;
+    overflow: auto;
+    width: min-content;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+    }
+}
+
+.screen {
+    background-color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100vw;
+    height: 100vh;
+}
+
+.info {
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    .sliderContainer{
+        display: flex;
+        gap: 0.2rem;
+        align-items: center;
+    }
+    color: white;
+}
+
+.button {
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: solid #888 2px;
+    color: #AAA;
+    transition: ease all 200ms;
+
+    &:hover{
+        background-color: #888;
+        color: white;
+    }
+}
+
+.extras {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
